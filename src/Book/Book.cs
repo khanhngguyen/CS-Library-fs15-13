@@ -48,11 +48,10 @@ abstract class Book
         Title = title;
         Author = author;
         PublicationYear = year;
-        // CanBorrow = canBorrow;
     }
 
     public virtual void PrintInfo()
     {
-        
+        Console.WriteLine($"Book info: title: {this.Title}, author: {this.Author}, published in: {this.PublicationYear}.");
     }
 }

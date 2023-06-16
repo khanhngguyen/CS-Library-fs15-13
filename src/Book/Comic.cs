@@ -1,5 +1,5 @@
 using System;
-using Books;
+namespace Books;
 using Interface;
 
 class Comic : Book, IComic
@@ -18,10 +18,7 @@ class Comic : Book, IComic
     public void AddArtist(string artistName)
     {
         var existed = Artists.Find(a => a == artistName);
-        if (existed == null)
-        {
-            Artists.Add(artistName);
-        }
+        if (existed == null) Artists.Add(artistName);
         else return;
     }
     public void RemoveArtist(string artistName)
@@ -45,6 +42,7 @@ class Comic : Book, IComic
     }
     public override void PrintInfo()
     {
-
+        base.PrintInfo();
+        Console.WriteLine(this.GetAllArtits());
     }
 }
