@@ -1,5 +1,6 @@
 ﻿using System;
 using Books;
+using User;
 
 internal class Program
 {
@@ -31,5 +32,11 @@ internal class Program
         ResearchPaper research1 = new ResearchPaper("Research 1", "Helsinki University", 2020, 20);
         int[] test1 = research1.PrintPages(1, 10);
         Console.WriteLine(test1.Count());
+        Console.WriteLine(research1.CanBorrow);
+
+        Customer cus1 = new Customer("Anna");
+        Console.WriteLine(cus1.Role);
+        Librarian lib1 = new Librarian("Ben");
+        Console.WriteLine(lib1.Role);
     }
 }
