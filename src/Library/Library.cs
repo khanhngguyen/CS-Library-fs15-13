@@ -7,7 +7,7 @@ class Library
     private readonly HashSet<Book> _books = new HashSet<Book>();
     private readonly HashSet<Book> _borrowedBooks = new HashSet<Book>();
     private readonly HashSet<string> _booksTitles = new HashSet<string>();
-    private HashSet<Person> _users = new HashSet<Person>();
+    private readonly HashSet<Person> _users = new HashSet<Person>();
 
     public string Name 
     {
@@ -22,6 +22,10 @@ class Library
     public HashSet<Book> Books
     {
         get { return _books; }
+    }
+    public HashSet<Person> Users
+    {
+        get { return _users; }
     }
 
     public Library(string name)
@@ -90,6 +94,53 @@ class Library
             Console.WriteLine($"Return book: {book.Title} back to library successfully");
             return true;
         }
-        else throw new ArgumentException($"Can not return this book");
+        else throw new ArgumentException("Can not return this book");
+    }
+    public void EditBook(Book book, string? title, string? author, int? year)
+    {
+        if (_books.Contains(book))
+        {
+            var found = _books.FirstOrDefault(b => b.ISBN == book.ISBN);
+            if (found == null) throw new Exception();
+            else 
+            {
+                if (title != null) found.Title = title;
+                if (author != null) found.Author = author;
+                if (year.HasValue) found.PublicationYear = (int) year;
+            }
+        }
+        else throw new ArgumentException($"Can not find book: {book.Title} in library to edit");
+    }
+    public bool AddUser(Person user)
+    {
+        if (_users.Contains(user)) return false;
+        else
+        {
+            _users.Add(user);
+            return true;
+        }
+    }
+    public bool RemoveUser(Person user)
+    {
+        if (_users.Contains(user))
+        {
+            _users.Remove(user);
+            return true;
+        }
+        else throw new ArgumentException("Can not remove, user is not in this library");
+    }
+    public void EditUser(Person user, string name)
+    {
+        if (_users.Contains(user))
+        {
+            var found = _users.FirstOrDefault(u => u.Id == user.Id);
+            if (found == null) throw new Exception();
+            else found.Name = name;
+        }
+        else throw new ArgumentException("Can not edit, user is not in this library");
+    }
+    public bool HasCustomer(Person user)
+    {
+        return _users.Contains(user);
     }
 }

@@ -36,6 +36,7 @@ internal class Program
         Console.WriteLine(research1.CanBorrow);
 
         Customer cus1 = new Customer("Anna");
+        Customer cus2 = new Customer("Bill");
         Console.WriteLine(cus1.Role);
         Librarian lib1 = new Librarian("Ben");
         Console.WriteLine(lib1.Role);
@@ -43,7 +44,18 @@ internal class Program
         Library library = new Library("Oodi");
         library.AddBook(comic1);
         library.AddBook(novel1);
-        library.GetBook(novel1);
-        library.SearchBookByTitle("The Great GATSBY");
+        // library.GetBook(novel1);
+        // library.SearchBookByTitle("The Great GATSBY");
+        library.AddUser(cus1);
+        library.AddUser(lib1);
+        library.EditUser(cus1, "Anya");
+        Console.WriteLine(cus1.Name);
+        library.EditBook(comic1, null, null, null);
+        comic1.PrintInfo();
+        cus1.Borrow(comic1, library);
+        // library.GetBook(comic1);
+        cus1.Return(comic1, library);
+        // library.GetBook(comic1);
+        cus2.Borrow(comic1, library);
     }
 }
