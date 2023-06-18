@@ -1,6 +1,7 @@
 ﻿using System;
 using Books;
 using User;
+using Libraries;
 
 internal class Program
 {
@@ -38,5 +39,11 @@ internal class Program
         Console.WriteLine(cus1.Role);
         Librarian lib1 = new Librarian("Ben");
         Console.WriteLine(lib1.Role);
+
+        Library library = new Library("Oodi");
+        library.AddBook(comic1);
+        library.AddBook(novel1);
+        library.GetBook(novel1);
+        library.SearchBookByTitle("The Great GATSBY");
     }
 }
