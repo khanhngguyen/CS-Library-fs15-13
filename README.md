@@ -31,3 +31,18 @@ Your job is to model this system using classes, interfaces, and/or abstract clas
 3. Inheritance: Make use of inheritance. There should be a clear hierarchy and use of both base and derived classes.
 
 4. Polymorphism: Your program should utilize polymorphism, allowing objects to decide which methods should be invoked.
+
+## Results
+Create books & library
+![Create books & library](src/demo%20photos/create%20books%20%26%20library.png)
+
+Create users: Customer & Librarian.
+Only librarian can edit a book's information
+![create users & edit book](src/demo%20photos/create%20users%2C%20edit%20book%20info.png)
+
+
+Customers can borrow & return books
+![borrow & return books](src/demo%20photos/borrow%20%26%20return%20book.png)
+
+Customers can borrow Comic, Novel, Textbook, but not Research Paper
+![can not borrow research paper](src/demo%20photos/can%20not%20borrow%20research%20paper.png)

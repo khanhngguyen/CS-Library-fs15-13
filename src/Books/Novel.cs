@@ -10,6 +10,7 @@ class Novel : Book, INovel
         Title = title;
         Author = author;
         PublicationYear = year;
+        CanBorrow = canBorrow;
         Genres = new List<string>();
     }
 

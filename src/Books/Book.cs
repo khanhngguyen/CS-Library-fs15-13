@@ -52,6 +52,6 @@ abstract class Book
 
     public virtual void PrintInfo()
     {
-        Console.WriteLine($"Book info: title: {this.Title}, author: {this.Author}, published in: {this.PublicationYear}.");
+        Console.WriteLine($"_Book info: title: {this.Title}, author: {this.Author}, published in: {this.PublicationYear}.");
     }
 }
