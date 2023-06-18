@@ -14,7 +14,7 @@ class Customer : Person, ICustomer
 
     public void Borrow(Book book, Library library)
     {
-        if (library.HasCustomer(this))
+        if (library.HasUser(this))
         {
             library.BorrowBook(book);
         }
@@ -22,7 +22,7 @@ class Customer : Person, ICustomer
     }
     public void Return(Book book, Library library)
     {
-        if (library.HasCustomer(this))
+        if (library.HasUser(this))
         {
             library.ReturnBook(book);
         }

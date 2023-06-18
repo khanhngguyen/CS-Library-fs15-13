@@ -52,6 +52,14 @@ class Library
         }
         else throw new ArgumentException("Can not find book");
     }
+    public void GetAllBooks()
+    {
+        Console.WriteLine("All available books in library:");
+        foreach (Book book in _books)
+        {
+            book.PrintInfo();
+        }
+    }
     public void SearchBookByTitle(string name)
     {
         if (_booksTitles.Contains(name.ToLower()))
@@ -78,10 +86,18 @@ class Library
     {
         if (_books.Contains(book))
         {
-            _borrowedBooks.Add(book);
-            _books.Remove(book);
-            Console.WriteLine($"Book: {book.Title} is borrowed");
-            return true;
+            if (book.CanBorrow)
+            {
+                _borrowedBooks.Add(book);
+                _books.Remove(book);
+                Console.WriteLine($"Book: {book.Title} is borrowed");
+                return true;
+            }
+            else 
+            {
+                Console.WriteLine("This book can not be borrowed");
+                return false;
+            }
         }
         else throw new ArgumentException($"Can not find book {book.Title} in the library");
     }
@@ -139,7 +155,7 @@ class Library
         }
         else throw new ArgumentException("Can not edit, user is not in this library");
     }
-    public bool HasCustomer(Person user)
+    public bool HasUser(Person user)
     {
         return _users.Contains(user);
     }

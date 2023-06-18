@@ -56,6 +56,13 @@ internal class Program
         // library.GetBook(comic1);
         cus1.Return(comic1, library);
         // library.GetBook(comic1);
-        cus2.Borrow(comic1, library);
+        // cus2.Borrow(comic1, library);
+        lib1.AddBookToLibrary(textbook1, library);
+        lib1.AddBookToLibrary(research1, library);
+        // library.GetAllBooks();
+        // lib1.RemoveBookFromLibrary(research1, library);
+        lib1.EditBookInLibrary(textbook1, library, null, null, 2000);
+        textbook1.PrintInfo();
+        cus1.Borrow(research1, library);
     }
 }
