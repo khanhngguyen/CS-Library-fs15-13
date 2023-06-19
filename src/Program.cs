@@ -39,6 +39,12 @@ internal class Program
         cus1.Return(comic1, Oodi);
         Oodi.GetAllBooks();
 
+        Console.WriteLine("\nTextbook & Research paper can be printed to a certain amount of pages, using method PrintPage with 2 parameters: start page & end page");
+        Console.WriteLine("Method will return sub-array/copies with only selected pages");
+        Console.WriteLine("Print Textbook from page 10 - 20 & print Research paper from page 5 - 10");
+        textbook1.PrintPages(10, 20);
+        research1.PrintPages(5, 10);
+
         Console.WriteLine("\nCustomer can borrow comic book, novel, textbook, but not research paper");
         cus1.Borrow(comic1, Oodi);
         cus1.Borrow(novel1, Oodi);

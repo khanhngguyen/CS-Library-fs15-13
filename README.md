@@ -46,3 +46,6 @@ Customers can borrow & return books
 
 Customers can borrow Comic, Novel, Textbook, but not Research Paper
 ![can not borrow research paper](src/demo%20photos/can%20not%20borrow%20research%20paper.png)
+
+Textbook & Research paper can be printed out to a certain amount of pages using PrintPages method
+![Textbook & Research paper PrintPages()](src/demo%20photos/PrintPages.png)
